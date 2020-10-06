@@ -3,14 +3,14 @@
     <h1>{{ $route.params.id }}</h1>
 
     <div>
-      <router-link to="/user/123">User</router-link>|
-      <router-link to="/user/123/profile">Profile</router-link>|
+      <router-link to="/user/123">User</router-link> |
+      <router-link to="/user/123/profile">Profile</router-link> |
       <router-link to="/user/123/posts">Posts</router-link>
     </div>
     <div>
-      <button @click="gotoUserPage('/user/123')">User</button>|
-      <button @click="gotoUserPage('/user/123/profile')">profile</button>|
-      <button @click="gotoUserPage('/user/123/posts')">posts</button>|
+      <button @click="gotoUserPage('/user/123')">User</button> |
+      <button @click="gotoUserPage('/user/123/profile')">profile</button> |
+      <button @click="gotoUserPage('/user/123/posts')">posts</button> |
 
       <button @click="gotoUserPage('user')">user</button>
     </div>
@@ -26,8 +26,8 @@
     <hr />
     <div>
       Navigate through history
-      <button @click="$router.go(1)">1</button>|
-      <button @click="$router.go(-2)">-2</button>|
+      <button @click="$router.go(1)">1</button> |
+      <button @click="$router.go(-2)">-2</button>
     </div>
 
     <router-view></router-view>
