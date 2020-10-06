@@ -2,24 +2,30 @@
   <div class="user">
     <h1>{{ $route.params.id }}</h1>
 
-    <router-link to="/user/123">User</router-link>|
-    <router-link to="/user/123/profile">Profile</router-link>|
-    <router-link to="/user/123/posts">Posts</router-link>
+    <div>
+      <router-link to="/user/123">User</router-link>|
+      <router-link to="/user/123/profile">Profile</router-link>|
+      <router-link to="/user/123/posts">Posts</router-link>
+    </div>
+    <div>
+      <button @click="gotoUserPage('/user/123')">User</button>|
+      <button @click="gotoUserPage('/user/123/profile')">profile</button>|
+      <button @click="gotoUserPage('/user/123/posts')">posts</button>|
 
-    <button @click="gotoUserPage('/user/123')">User</button>|
-    <button @click="gotoUserPage('/user/123/profile')">profile</button>|
-    <button @click="gotoUserPage('/user/123/posts')">posts</button>|
+      <button @click="gotoUserPage('user')">user</button>
+    </div>
 
-    <button @click="gotoUserPage('user')">user</button>|
-
+    <!-- This is the same as this.$router.push({ name: 'user', params: { name: 'hi' }}); 
+    But some how produces Error -->
+    <hr />
     <div>
       <router-link to="{ name: 'user', params: { name: 'hi' }}"
         >navigate with name</router-link
-      >|
+      >
     </div>
-
+    <hr />
     <div>
-      navigate throu history
+      Navigate through history
       <button @click="$router.go(1)">1</button>|
       <button @click="$router.go(-2)">-2</button>|
     </div>
