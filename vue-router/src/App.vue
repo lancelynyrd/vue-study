@@ -1,33 +1,39 @@
 <template>
+  <h1>{{ title }}</h1>
   <div id="nav">
+    <!-- <router-link to="path">Page<router-link> tag is used similar to <a href="path">Page</a> -->
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> | 
+    <router-link to="/about">About</router-link> |
     <router-link to="/contact-us">Contact Us</router-link> |
-    <router-link to="/user/123">User</router-link>|
+    <router-link to="/user/123">User</router-link>
   </div>
+
+  <!-- this is the tag where the matching route will be mounted -->
   <router-view />
-<!-- 
-  <router-view class="view one"></router-view>
+
+  <!-- <router-view class="view one"></router-view>
   <router-view class="view two" name="left"></router-view>
   <router-view class="view three" name="right"></router-view> -->
 
+  <!-- To check the content of the $route -->
   <!-- <pre>{{ JSON.stringify($route, null, 2) }}</pre> -->
 </template>
 
-
 <script lang="ts">
-import { watch } from 'vue';
-import { Vue, Options } from 'vue-class-component';
+import { Vue, Options } from "vue-class-component";
 
 @Options({
-    watch: {
+  /**
+   * to watch the change from $route when ever the page changes.
+   */
+  watch: {
     $route(to, from) {
-      console.log(to.path, '<=', from.path);
-      }
+      console.log(to.path, "<=", from.path);
     }
+  }
 })
 export default class App extends Vue {
-  hello = 12344;
+  title = "Vue Router";
 }
 </script>
 
