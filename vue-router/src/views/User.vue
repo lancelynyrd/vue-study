@@ -12,33 +12,32 @@
 
     <button @click="gotoUserPage('user')">user</button>|
 
+    <div>
+      <router-link to="{ name: 'user', params: { name: 'hi' }}"
+        >navigate with name</router-link
+      >|
+    </div>
 
-
-<div>
-    <router-link to="{ name: 'user', params: { name: 'hi' }}">navigate with name</router-link>|
-</div>
-
-<div>
-    navigate throu history
-    <button @click="$router.go(1)">1</button>|
-    <button @click="$router.go(-2)">-2</button>|
-</div>
+    <div>
+      navigate throu history
+      <button @click="$router.go(1)">1</button>|
+      <button @click="$router.go(-2)">-2</button>|
+    </div>
 
     <router-view></router-view>
   </div>
 </template>
 
 <script lang="ts">
-import { Vue, Options } from 'vue-class-component';
+import { Vue, Options } from "vue-class-component";
 
 @Options({
-    methods: {}
-
+  methods: {}
 })
 export default class User extends Vue {
-            gotoUserPage(path: string) {
-            this.$router.push({ path: path})       // push to history
-            // this.$router.replace({ path: path})   // navigate without history entry
-        }
+  gotoUserPage(path: string) {
+    this.$router.push({ path: path }); // push to history
+    // this.$router.replace({ path: path})   // navigate without history entry
+  }
 }
 </script>
