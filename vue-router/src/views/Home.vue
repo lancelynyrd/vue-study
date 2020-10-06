@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="@ is an alias to /src" />
   </div>
 </template>
