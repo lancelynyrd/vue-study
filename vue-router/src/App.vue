@@ -34,6 +34,7 @@ import { Vue, Options } from "vue-class-component";
 })
 export default class App extends Vue {
   title = "Vue Router";
+
 }
 </script>
 
